@@ -6,7 +6,8 @@ apt-get install -y \
     gcc \
     re2c \
     bison \
-    libxml2-dev 
+    libxml2-dev \
+    vim
 
 git clone --depth 1 https://github.com/php/php-src.git
 cd php-src
