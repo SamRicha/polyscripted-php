@@ -13,3 +13,5 @@ yes | cp configure.polyscripted configure
 
 make install
 
+cd /polyscripted-php
+find . -type d -empty -delete
