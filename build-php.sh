@@ -1,5 +1,13 @@
-git clone --depth 1 https://github.com/php/php-src.git
+echo "You can specify a git ref to build from my passing a parameter."
+
+git clone https://github.com/php/php-src.git
 cd php-src
+
+if [[ "$1" != "" ]]; then
+	echo "You have specified git ref $1"
+        echo "Checking out php source to that ref."
+        git checkout "$1"
+fi
 
 ./buildconf
 
