@@ -1,7 +1,7 @@
 echo "You can specify a git ref to build from my passing a parameter."
 
-git clone https://github.com/php/php-src.git
 cd php-src
+git pull
 
 if [[ "$1" != "" ]]; then
 	echo "You have specified git ref $1"

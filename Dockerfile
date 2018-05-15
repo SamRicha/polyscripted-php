@@ -14,4 +14,5 @@ RUN apt-get install -y \
 
 COPY build-php.sh /php/
 WORKDIR /php
+RUN git clone https://github.com/php/php-src.git
 
