@@ -15,7 +15,7 @@ cd php-src
 ./buildconf
 ./configure --without-pear 
 
-sed 's/.*PHP_EXTRA_VERSION.*/PHP_EXTRA_VERSION = -polyscripted;/' Makefile > Makefile.polyscripted
+sed 's/.*PHP_EXTRA_VERSION.*/PHP_EXTRA_VERSION = -polyscripted/' Makefile > Makefile.polyscripted
 yes | cp Makefile.polyscripted Makefile
 
 make
