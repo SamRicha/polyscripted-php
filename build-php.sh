@@ -11,7 +11,7 @@ if [[ "$1" != "" ]]; then
         git checkout "$1"
 fi
 
-./buildconf
+./buildconf --force
 
 sed 's/PHP_EXTRA_VERSION=.*/PHP_EXTRA_VERSION=-polyscripted/' configure > configure.polyscripted
 yes | cp configure.polyscripted configure
