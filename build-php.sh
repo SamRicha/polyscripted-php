@@ -1,3 +1,5 @@
+#!/bin/bash
+
 echo "You can specify a git ref to build from my passing a parameter."
 
 cd php-src
