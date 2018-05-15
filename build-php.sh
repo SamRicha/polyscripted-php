@@ -13,6 +13,6 @@ git clone --depth 1 https://github.com/php/php-src.git
 cd php-src
 
 ./buildconf
-./configure --without-pear --prefix="/polyscripted-php" --exec-prefix="/polyscripted-php"
+./configure --without-pear 
 make
 
