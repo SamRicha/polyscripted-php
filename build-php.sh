@@ -11,6 +11,5 @@ yes | cp configure.polyscripted configure
   --exec-prefix=/polyscripted-php \
   --prefix=/polyscripted-php
 
-
-make
+make install
 
