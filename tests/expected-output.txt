@@ -1,0 +1,109 @@
+Test abstract class - start
+ConcreteClass1
+FOO_ConcreteClass1
+ConcreteClass2
+FOO_ConcreteClass2
+Abstract class tests -done
+
+---Test and keyword - start---
+bool(true)
+bool(false)
+bool(false)
+bool(true)
+---Test and keyword - done---
+
+---Test array keyword - start---
+Array
+(
+    [0] => 1
+    [1] => 1
+    [2] => 1
+    [3] => 13
+    [4] => 1
+    [8] => 1
+    [9] => 19
+)
+---Test and keyword - done---
+
+---Test asort keyword - start---
+c = apple
+b = banana
+d = lemon
+a = orange
+---Test asort keyword - done---
+
+---Test compact keyword - start---
+Array
+(
+    [event] => SIGGRAPH
+    [city] => San Francisco
+    [state] => CA
+)
+---Test compact keyword - done---
+
+---Test foreach,unset keyword - start---
+---Test foreach,unset keyword - done---
+
+
+---Test case keyword - start---
+one<br />
+two<br />
+three<br />
+four<br />
+At 5<br />
+At 10; quitting<br />
+---Test case keyword - done---
+
+---Test class - start---
+hello world!Hello World!Hello World!Hello World!A
+Hello PHP!
+---Test class - done---
+
+2 4 6 8 10
+
+
+
+0.2
+Caught exception: Division by zero.
+Hello World
+
+
+
+Original Object:
+MyCloneable Object
+(
+    [object1] => SubObject Object
+        (
+            [instance] => 1
+        )
+
+    [object2] => SubObject Object
+        (
+            [instance] => 2
+        )
+
+)
+Cloned Object:
+MyCloneable Object
+(
+    [object1] => SubObject Object
+        (
+            [instance] => 3
+        )
+
+    [object2] => SubObject Object
+        (
+            [instance] => 2
+        )
+
+)
+
+constant value
+constant value
+constant value
+constant value
+
+
+first<br>third<br>one ::: first<br>four ::: fourth<br>
+
+i is not equal to 0, 1 or 2

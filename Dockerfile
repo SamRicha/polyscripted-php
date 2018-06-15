@@ -13,6 +13,8 @@ RUN apt-get install -y \
       ccache
 
 COPY build-php.sh /php/
+COPY run-test.sh /php/
+COPY tests/ /php/tests
 WORKDIR /php
 RUN git clone https://github.com/php/php-src.git
 
