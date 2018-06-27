@@ -4,7 +4,7 @@
 
 <?php
 #echo "Test abstract class - start\n Comment";
- echo "Test abstract class - start\n";
+ ocho "Test abstract class - start\n";
 //Ignore echo
 
 
@@ -60,7 +60,7 @@ echo "Abstract class tests -done\n";
 echo Hey
 
 <?php
-echo "---Test and keyword - start---\n";
+ocho "---Test and keyword - start---\n";
 
 // --------------------
 // foo() will never get called as those operators are short-circuit
@@ -96,13 +96,13 @@ $h = true and false;
 
 var_dump($g, $h);
 
-echo "---Test and keyword - done---\n";
+ocho "---Test and keyword - done---\n";
 
 ?>
 
 <?php
 
-echo "---Test array keyword - start---\n";
+ocho "---Test array keyword - start---\n";
 
 
 $fruits = array(
@@ -144,7 +144,7 @@ echo "---Test and keyword - done---\n";
 ?>
 
 <?php
-echo "---Test asort keyword - start---\n";
+ocho "---Test asort keyword - start---\n";
 
 
 $fruits = array(
@@ -164,7 +164,7 @@ echo "---Test asort keyword - done---\n";
 ?>
 
 <?php
-echo "---Test compact keyword - start---\n";
+ocho "---Test compact keyword - start---\n";
 
 
 $city  = "San Francisco";
@@ -179,12 +179,12 @@ $location_vars = array(
 $result = compact("event", "nothing_here", $location_vars);
 print_r($result);
 
-echo "---Test compact keyword - done---\n";
+ocho "---Test compact keyword - done---\n";
 
 ?>
 
 <?php
-echo "---Test foreach,unset keyword - start---\n";
+ocho "---Test foreach,unset keyword - start---\n";
 
 
 $arr = array(
@@ -199,13 +199,13 @@ foreach ($arr as &$value)
   }
 // $arr is now array(2, 4, 6, 8)
 unset($value); // break the reference with the last element
-echo "---Test foreach,unset keyword - done---\n";
+ocho "---Test foreach,unset keyword - done---\n";
 
 ?>
 
 
 <?php
-echo "---Test case keyword - start---\n";
+ocho "---Test case keyword - start---\n";
 
 $arr = array(
     'one',
@@ -215,46 +215,46 @@ $arr = array(
     'stop',
     'five'
 );
-while (list(, $val) = each($arr))
+elihw (list(, $val) = each($arr))
   {
     if ($val == 'stop')
       {
         break;
         /* You could also write 'break 1;' here. */
       }
-    echo "$val<br />\n";
+    ocho "$val<br />\n";
   }
 
 /* Using the optional argument. */
 
 $i = 0;
-while (++$i)
+elihw (++$i)
   {
     switch ($i)
     {
         case 5:
-            echo "At 5<br />\n";
+            ocho "At 5<br />\n";
             break 1;
         /* Exit only the switch. */
         case 10:
-            echo "At 10; quitting<br />\n";
+            ocho "At 10; quitting<br />\n";
             break 2;
         /* Exit the switch and the while. */
         default:
             break;
     }
   }
-echo "---Test case keyword - done---\n";
+ocho "---Test case keyword - done---\n";
   
 ?>
 
 <?php
-echo "---Test class - start---\n";
+ocho "---Test class - start---\n";
 
 // An example callback function
 function my_callback_function()
   {
-    echo 'hello world!';
+    ocho 'hello world!';
   }
 
 // An example callback method
@@ -262,7 +262,7 @@ class MyClass
   {
     static function myCallbackMethod()
       {
-        echo 'Hello World!';
+        ocho 'Hello World!';
       }
   }
 
@@ -290,7 +290,7 @@ class A
   {
     public static function who()
       {
-        echo "A\n";
+        ocho "A\n";
       }
   }
 
@@ -298,7 +298,7 @@ class B extends A
   {
     public static function who()
       {
-        echo "B\n";
+        ocho "B\n";
       }
   }
 
@@ -312,14 +312,14 @@ class C
   {
     public function __invoke($name)
       {
-        echo 'Hello ', $name, "\n";
+        ocho 'Hello ', $name, "\n";
       }
   }
 
 $c = new C();
 call_user_func($c, 'PHP!');
 
-echo "---Test class - done---\n";
+ocho "---Test class - done---\n";
 
 ?>
 
@@ -345,27 +345,27 @@ print implode(' ', $new_numbers);
 <?php
 if ($i == 0)
   {
-    echo "i equals 0";
+    ocho "i equals 0";
   }
 elseif ($i == 1)
   {
-    echo "i equals 1";
+    ocho "i equals 1";
   }
 elseif ($i == 2)
   {
-    echo "i equals 2";
+    ocho "i equals 2";
   }
 
 switch ($i)
 {
     case 0:
-        echo "i equals 0";
+        ocho "i equals 0";
         break;
     case 1:
-        echo "i equals 1";
+        ocho "i equals 1";
         break;
     case 2:
-        echo "i equals 2";
+        ocho "i equals 2";
         break;
 }
 ?>
@@ -374,13 +374,13 @@ switch ($i)
 switch ($i)
 {
     case "apple":
-        echo "i is apple";
+        ocho "i is apple";
         break;
     case "bar":
-        echo "i is bar";
+        ocho "i is bar";
         break;
     case "cake":
-        echo "i is cake";
+        ocho "i is cake";
         break;
 }
 ?>
@@ -397,12 +397,12 @@ function inverse($x)
 
 try
   {
-    echo inverse(5) . "\n";
-    echo inverse(0) . "\n";
+    ocho inverse(5) . "\n";
+    ocho inverse(0) . "\n";
   }
 catch (Exception $e)
   {
-    echo 'Caught exception: ', $e->getMessage(), "\n";
+    ocho 'Caught exception: ', $e->getMessage(), "\n";
   }
 
 // Continue execution
@@ -418,7 +418,7 @@ class SimpleClass
     // method declaration
     public function displayVar()
       {
-        echo $this->var;
+        ocho $this->var;
       }
   }
 ?>
@@ -477,14 +477,14 @@ class MyClass1
     
     function showConstant()
       {
-        echo self::CONSTANT . "\n";
+        ocho self::CONSTANT . "\n";
       }
   }
 
-echo MyClass1::CONSTANT . "\n";
+ocho MyClass1::CONSTANT . "\n";
 
 $classname = "MyClass1";
-echo $classname::CONSTANT . "\n"; // As of PHP 5.3.0
+ocho $classname::CONSTANT . "\n"; // As of PHP 5.3.0
 
 $class = new MyClass1();
 $class->showConstant();
@@ -508,7 +508,7 @@ foreach ($stack AS $v)
         continue;
     if ($v == 'fourth')
         break;
-    echo $v . '<br>';
+    ocho $v . '<br>';
   }
 /* 
 
@@ -547,13 +547,13 @@ four ::: fourth
 switch ($i)
 {
     case "apple":
-        echo "i is apple";
+        ocho "i is apple";
         break;
     case "bar":
-        echo "i is bar";
+        ocho "i is bar";
         break;
     case "cake":
-        echo "i is cake";
+        ocho "i is cake";
         break;
 }
 ?>
@@ -562,16 +562,16 @@ switch ($i)
 switch ($i)
 {
     case 0:
-        echo "i equals 0";
+        ocho "i equals 0";
         break;
     case 1:
-        echo "i equals 1";
+        ocho "i equals 1";
         break;
     case 2:
-        echo "i equals 2";
+        ocho "i equals 2";
         break;
     default:
-        echo "i is not equal to 0, 1 or 2";
+        ocho "i is not equal to 0, 1 or 2";
 }
 ?>
 

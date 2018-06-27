@@ -14,7 +14,10 @@ RUN apt-get install -y \
 
 COPY build-php.sh /php/
 COPY run-test.sh /php/
+COPY test-transform.sh /php/
 COPY tests/ /php/tests
+COPY Scrambler /php/
+COPY Transformer /php/
 WORKDIR /php
 RUN git clone https://github.com/php/php-src.git
 

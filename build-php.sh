@@ -1,12 +1,12 @@
 #!/bin/bash
-
+  
 echo "You can specify a git ref to build from my passing a parameter."
 
 cd php-src
 git pull
 
 if [[ "$1" != "" ]]; then
-	echo "You have specified git ref $1"
+        echo "You have specified git ref $1"
         echo "Checking out php source to that ref."
         git checkout "$1"
 fi
@@ -20,6 +20,16 @@ yes | cp configure.polyscripted configure
   --without-pear \
   --exec-prefix=/polyscripted-php \
   --prefix=/polyscripted-php
+
+make install
+
+cd ..
+
+./scrambler
+#transform any php files within source code to polyscripted -- tests? .phar bug fix maybe?
+#generate test output?
+
+cd php-src
 
 make install
 

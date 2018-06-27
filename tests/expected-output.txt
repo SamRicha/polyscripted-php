@@ -1,9 +1,15 @@
+<><> This is all outside of php <><> 
+
+//This is a comment echo
+
 Test abstract class - start
 ConcreteClass1
 FOO_ConcreteClass1
 ConcreteClass2
 FOO_ConcreteClass2
 Abstract class tests -done
+
+echo Hey
 
 ---Test and keyword - start---
 bool(true)
@@ -107,3 +113,5 @@ constant value
 first<br>third<br>one ::: first<br>four ::: fourth<br>
 
 i is not equal to 0, 1 or 2
+
+Heyyo
