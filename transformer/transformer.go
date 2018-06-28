@@ -52,8 +52,12 @@ func processState(c rune) {
 		if !ValidWord(string(c)) {
 			RestartScan()
 		}
-	case Quoted:
+	case DubQuoted:
 		if c == DubQUOTE {
+			RestartScan()
+		}
+	case SingQuoted:
+		if c == SingQUOTE {
 			RestartScan()
 		}
 	case Scan:
@@ -94,7 +98,9 @@ func transitionState(c rune) {
 	case FwdSLASH:
 		state = FwdSlash
 	case DubQUOTE:
-		state = Quoted
+		state = DubQuoted
+	case SingQUOTE:
+		state = SingQuoted
 	case VARIABLE:
 		state = UserDef
 	case BACKSLASH:

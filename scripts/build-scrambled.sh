@@ -1,16 +1,21 @@
 #!/bin/bash
+  
+./resetPhp/reset-php.sh
+./tests/remove-expected-out.sh
 
-cd tests 
+cd tests
 ./get-expected-out.sh
 cd ..
 
-./Scrambler
+./scrambler
+
+
+./transformer -f /php/php-src/ext/phar/phar/phar.php -replace=true
+./transformer -f /php/php-src/ext/phar/build_precommand.php -replace=true
 
 cd php-src
-
-./buildconf
-
-make install
+make install -k
 
 cd /polyscripted-php
 find . -type d -empty -delete
+

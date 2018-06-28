@@ -29,7 +29,7 @@ func lookUpBuffer() string {
 
 //Grab dictionary -- FromFile
 func initMapping() {
-	decodeFile, err := os.Open("scrambled.gob")
+	decodeFile, err := os.Open("/php/scrambled.gob")
 	if err != nil {
 		fmt.Println("Error-- transformation not preformed.")
 		fmt.Println(err)

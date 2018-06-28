@@ -9,6 +9,7 @@ import (
 	"bytes"
 	"flag"
 	"errors"
+	"path/filepath"
 )
 
 var FILEIN = ""
@@ -24,7 +25,7 @@ var endComment = []byte("*/")
 
 const (
 	UserDef        = iota
-	Quoted         = iota
+	DubQuoted      = iota
 	Scan           = iota
 	Escaped        = iota
 	NonPhp         = iota
@@ -32,6 +33,7 @@ const (
 	MultiComment   = iota
 	OneLineComment = iota
 	Question 	   = iota
+	SingQuoted 	   = iota
 )
 
 const (
@@ -43,6 +45,7 @@ const (
 	ASTRIX    = rune('*')
 	FwdSLASH  = rune('/')
 	QUESTION  = rune('?')
+	SingQUOTE  = rune('\'')
 )
 
 
@@ -65,6 +68,7 @@ func writeOut(b []byte) {
 		fmt.Println(err)
 		os.Exit(1)
 	}
+	fmt.Printf("Generated polyscripted file- %s.\n", FILEOUT)
 }
 
 func parseCmdLn() { //TODO: This should take multiple files eventually.
@@ -75,7 +79,8 @@ func parseCmdLn() { //TODO: This should take multiple files eventually.
 	if *replace == true {
 	 	FILEOUT = FILEIN
 	} else {
-		FILEOUT = "ps-" + FILEIN
+		dir, file := filepath.Split(FILEIN)
+		FILEOUT = dir + "ps-" + file
 	}
 
 
