@@ -1,8 +1,12 @@
 #!/bin/bash
+
+cd tests/
+./remove-expected-out.sh
+
   
 echo "You can specify a git ref to build from my passing a parameter."
 
-cd php-src
+cd ../php-src
 git pull
 
 if [[ "$1" != "" ]]; then
@@ -20,16 +24,6 @@ yes | cp configure.polyscripted configure
   --without-pear \
   --exec-prefix=/polyscripted-php \
   --prefix=/polyscripted-php
-
-make install
-
-cd ..
-
-./scrambler
-#transform any php files within source code to polyscripted -- tests? .phar bug fix maybe?
-#generate test output?
-
-cd php-src
 
 make install
 

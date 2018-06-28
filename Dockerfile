@@ -13,9 +13,9 @@ RUN apt-get install -y \
       ccache
 
 COPY build-php.sh /php/
-COPY run-test.sh /php/
-COPY test-transform.sh /php/
+COPY build-scrambled.sh /php/
 COPY tests/ /php/tests
+COPY phpLexAndYak/ /php/phpReset
 COPY Scrambler /php/
 COPY Transformer /php/
 WORKDIR /php

@@ -2,6 +2,5 @@
 
 for file in *.php
 do
-	touch "expected_${file}"
-	#/polyscripted-php/bin/php $file > "${file}_expected"
+	/polyscripted-php/bin/php $file > "expected_${file}"
 done
