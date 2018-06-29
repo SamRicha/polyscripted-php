@@ -1,6 +1,5 @@
 Welcome to the Polyscripting Playground
 
-
 From within the Docker container here are the steps to running polyscripted php.
 
 Install standard php configured to support Polyscripting:
@@ -11,7 +10,7 @@ Next, to build a scrambled version of php:
 
 # ./build-scrambled.sh
 
-Or if you want to generate expected outputs for the .php files in tests:
+Or if you want to first generate expected outputs for the .php files in tests:
 
 # ./build-scrambled.sh -t
 
@@ -20,9 +19,10 @@ the build-scrambled script, but option -t will only generate expected test
 outputs accurately if you are building from the standard php.
 
 Now to the fun stuff.
-Notice that if you try to run a php program, you will be hit with an error.
+Notice that if you try to run a php program, you will be hit with some parse error:
 
-Parse error: syntax error, unexpected 'as'
+  Parse error: syntax error, unexpected 'as'
+
 Because php no longer recognizes its standard keywords.
 
 To transform your php file to polyscripted use ./transformer :
@@ -54,8 +54,9 @@ in the outputs of using standard php and scrambled php by using the command:
 Feel free to try it out with your own php files. There's also a small program with an eval vulnerability in tests/evalExploit if you're unfamiliar with code injection attacks, then run this with standard php first. Then scramble it up, and see what you can't do.
 
 Note: You can build a newly scrambled version of php at any time with
-the build-scrambled script, but option -t will only generate expected test
-outputs accurately if you are building from the standard php.
+the build-scrambled script, but if you'd like to revert back to standard php
+to run your original programs or generate new tests expected outputs you can run
+the reset-php.sh with the -revert option.
 
 To revert back to standard php use the command:
 
