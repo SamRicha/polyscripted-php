@@ -14,10 +14,10 @@ echo $echo. "\nBut the name of the function calling it is a randomly generated s
 
 
 <?php
-$string = 'exploiting';
-$name = 'a language';
-$password = 'impossible';
-$str = 'Polyscripting makes $string $name pretty much $password.';
+$vulnerability = 'code injection';
+$name = 'php';
+$optimist = 'impossible';
+$str = 'Polyscripting makes exploiting $vulnerability in $name pretty much $optimist.';
 echo $str. "\n";
 eval("\$str = \"$str\";");
 echo $str. "\n";
