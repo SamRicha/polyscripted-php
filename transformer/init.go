@@ -22,9 +22,10 @@ var NewLine = regexp.MustCompile("\\r\\n|\\r|\\n|;").MatchString
 
 var PhpFlag = []byte("<?php")
 var endComment = []byte("*/")
+var skip = false
 
 const (
-	UserDef        = iota 
+	UserDef        = iota
 	DubQuoted      = iota
 	Scan           = iota
 	Escaped        = iota
@@ -70,7 +71,7 @@ func writeOut(b []byte) {
 	fmt.Printf("Generated polyscripted file- %s.\n", FILEOUT)
 }
 
-func parseCmdLn() { //TODO: This should take multiple files eventually.
+func parseCmdLn() { //TODO: This should traverse folders eventually.
 	flag.StringVar(&FILEIN, "f", "", "File to transform.")
 	var replace = flag.Bool("replace", false, "Set to true to replace original file.")
 

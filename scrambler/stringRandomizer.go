@@ -19,7 +19,7 @@ const (
 )
 
 
-//Found on StackOverflow
+//Efficient randomized string generator.
 func RandomStringGen() string {
 	n := rand.Intn(MAX - MIN) + MIN
 	b := make([]byte, n)

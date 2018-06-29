@@ -6,8 +6,7 @@ import (
 	"io"
 )
 
-//TODO: TAKE FILE NAME AS INPUT
-//TODO: Put it in Polyverse php folder.
+//TODO: brackets, edge cases.
 
 var bufTok = bytes.Buffer{}
 var bufOut = bytes.Buffer{}
@@ -32,9 +31,14 @@ func main() {
 	writeOut(bufOut.Bytes())
 }
 
-//Simple finite state machine
+//Very simple finite state machine, checks base cases.
+//Need a use a stack and scanners & parsers to better check syntax and grammar.
 func processState(c rune) {
 	bufTok.WriteRune(c)
+	if skip == true {
+		skip = false
+		return
+	}
 
 	switch state {
 	case NonPhp: //Looking for '<?php' -- bug: this will pick up quoted or commented as well.
@@ -56,10 +60,14 @@ func processState(c rune) {
 	case DubQuoted:
 		if c == DubQUOTE {
 			RestartScan()
+			} else if c == BACKSLASH {
+			skip = true
 		}
 	case SingQuoted:
 		if c == SingQUOTE {
 			RestartScan()
+		} else if c == BACKSLASH {
+			skip = true
 		}
 	case Scan:
 		if !ValidWord(string(c)) {
@@ -110,8 +118,7 @@ func transitionState(c rune) {
 	case BACKSLASH:
 		state = Escaped
 	default:
-		err := "Unreachable transition."
-		log.Fatal(err)
+		//state stays the same- no transition
 	}
 }
 

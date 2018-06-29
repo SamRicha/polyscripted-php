@@ -1,7 +1,5 @@
 package main
 
-//TODO: CLEAN UP, REFACTOR
-
 import (
 	"os"
 	"bufio"
@@ -61,7 +59,7 @@ func getWords(s []byte, state int) {
 	key := string(keyWord)
 
 	if _, ok := polyWords[key]; !ok {
-		if state != YAK {
+		if state != YAK { //For now, only words scrambled within lex will be scrambled in Yak.
 			polyWords[key] = RandomStringGen() // Add to map, generate random string (need checks here?)
 			key = polyWords[key]
 		}

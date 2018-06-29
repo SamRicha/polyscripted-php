@@ -10,6 +10,7 @@ import (
 
 var ValidWord = regexp.MustCompile("\\w").MatchString
 
+//REGEX used for now for base cases.
 var keywordsRegex = regexp.MustCompile( //REGEX found as user @martindilling comment on PHP documentation.
 	"((a(bstract|nd|rray|s))|" +
 		"(c(a(llable|se|tch)|l(ass|one)|on(st|tinue)))|" +
