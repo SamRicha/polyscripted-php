@@ -26,21 +26,22 @@ func main() {
 			}
 		}
 		processState(c)
-
 	}
+
 	bufOut.Write(bufTok.Bytes())
 	writeOut(bufOut.Bytes())
 }
 
+//Simple finite state machine
 func processState(c rune) {
 	bufTok.WriteRune(c)
 
 	switch state {
-	case NonPhp:
+	case NonPhp: //Looking for '<?php' -- bug: this will pick up quoted or commented as well.
 		if bytes.Contains(bufTok.Bytes(), PhpFlag) {
 			RestartScan()
 		}
-	case Question:
+	case Question: //Looks for a > to detect transition to NonPhp
 		if c == RBRACKET {
 			state = NonPhp
 		} else {
@@ -80,6 +81,9 @@ func processState(c rune) {
 		} else {
 			RestartScan()
 		}
+	default:
+		err := "Unreachable state."
+		log.Fatal(err)
 	}
 }
 
@@ -105,6 +109,9 @@ func transitionState(c rune) {
 		state = UserDef
 	case BACKSLASH:
 		state = Escaped
+	default:
+		err := "Unreachable transition."
+		log.Fatal(err)
 	}
 }
 

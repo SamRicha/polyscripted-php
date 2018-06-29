@@ -16,7 +16,7 @@ var FILEIN = ""
 var FILEOUT = ""
 
 
-var state = NonPhp
+var state = NonPhp //Starting state
 var ValidWord = regexp.MustCompile("\\w").MatchString
 var NewLine = regexp.MustCompile("\\r\\n|\\r|\\n|;").MatchString
 
@@ -24,7 +24,7 @@ var PhpFlag = []byte("<?php")
 var endComment = []byte("*/")
 
 const (
-	UserDef        = iota
+	UserDef        = iota 
 	DubQuoted      = iota
 	Scan           = iota
 	Escaped        = iota
@@ -50,7 +50,6 @@ const (
 
 
 func initReader() io.RuneReader {
-
 	parseCmdLn()
 
 	original, err := ioutil.ReadFile(FILEIN)
