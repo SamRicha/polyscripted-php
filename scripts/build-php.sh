@@ -1,12 +1,16 @@
 #!/bin/bash
 
+cd tests/
+./remove-expected-out.sh
+
+  
 echo "You can specify a git ref to build from my passing a parameter."
 
-cd php-src
+cd ../php-src
 git pull
 
 if [[ "$1" != "" ]]; then
-	echo "You have specified git ref $1"
+        echo "You have specified git ref $1"
         echo "Checking out php source to that ref."
         git checkout "$1"
 fi
